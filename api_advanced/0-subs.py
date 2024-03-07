@@ -8,7 +8,6 @@ def number_of_subscribers(subreddit):
     url = "https://api.reddit.com/r/{}/about".format(subreddit)
     headers = {'User-Agent': 'My User Agent 1.0'}
     response = requests.get(url, headers=headers, allow_redirects=False)
-    print(response.json())
     if response.status_code == 200:
         data = response.json()['data']
         if data:
